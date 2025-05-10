@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carta de Amor Interactiva</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f3f3;
+            color: #333;
+            padding: 50px;
+            text-align: center;
+        }
+        .message {
+            font-size: 20px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        input {
+            padding: 10px;
+            font-size: 16px;
+            width: 300px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+        .response {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="message">
+        <p>¿Quieres ser mi novia? (Escribe SI o NO)</p>
+        <input type="text" id="respuesta1" placeholder="Escribe tu respuesta">
+        <button onclick="verificarRespuesta()">Enviar</button>
+    </div>
+
+    <div id="respuestaFinal" class="response"></div>
+
+    <script>
+        function verificarRespuesta() {
+            var respuesta = document.getElementById("respuesta1").value.toUpperCase();
+            var respuestaFinal = document.getElementById("respuestaFinal");
+
+            if (respuesta === "SI") {
+                respuestaFinal.innerHTML = "Ahora ya estamos casados. ¡TE AMOOOOOOOOOOOOOOOOOOOOOOOO!";
+            } else if (respuesta === "NO") {
+                respuestaFinal.innerHTML = "Lo siento, pero tienes que decir SÍ para continuar.";
+            } else {
+                respuestaFinal.innerHTML = "Por favor, escribe solo 'SI' o 'NO'.";
+            }
+        }
+    </script>
+</body>
+</html>
